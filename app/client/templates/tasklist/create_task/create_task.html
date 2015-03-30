@@ -1,0 +1,11 @@
+<template name="CreateTask">
+	<form class="form-group" name="create-task">
+		<div class="row-fluid">
+		{{#if currentUser}}
+			<input class="form-control" type="text" placeholder="Create new task...">
+		{{else}}
+			<input class="form-control" type="text" placeholder="Sign in to create task" readonly>
+		{{/if}}			
+		</div>
+	</form>
+</template>

@@ -1,0 +1,56 @@
+/*****************************************************************************/
+/* main: Style */
+/*****************************************************************************/
+
+.container {
+	margin: 20px, 20px;
+	max-width: 960px;
+	padding-top: 20px;
+}
+
+.login {
+	margin: 20px, 0px;
+	float: right;
+}
+
+.task-item {
+	border: 0;
+}
+
+.list-inline {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+.task-item:hover {
+	background-color: #D3D3D3;
+}
+
+.checkbox {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.checked {
+	text-decoration: line-through;
+}
+
+.date-actions {
+	color: grey;
+	visibility: hidden;
+}
+
+.task-item:hover .date-actions {
+	visibility: visible;
+}
+
+.delete-button {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.delete-button:hover {
+	color: black;
+}

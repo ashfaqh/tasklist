@@ -1,0 +1,18 @@
+<template name="TaskList">
+	<div class="tasks-panel">
+		{{> CreateTask}}
+		<ul class="list-group">
+			{{#each tasklist}}
+				<li class="list-group-item task-item">
+					{{> Task}}
+				</li>
+<!--			{{else}}
+				<li class="task-item empty">
+					No task yet
+				</li>  -->
+			{{/each}}
+		</ul>
+	</div>
+
+	{{> TaskCount}}
+</template>

@@ -1,0 +1,21 @@
+<template name="Task">
+	<div class="row">
+<!--		<div class="checkbox">
+			<label> -->
+		<ul class="list-inline">
+			<li class="task-item checkbox">
+				<label>
+					<input type="checkbox" name="isDone" {{isDone}}>
+<!--			<li class="task-item"> -->
+					<span class="{{isDone}}">{{task}}</span>
+				</label>
+			</li>
+			<li class="pull-right date-actions">
+				{{formatDate createdOn}}
+				<span class="glyphicon glyphicon-trash delete-button" aria-hidden="true" name="delete"></span>
+			</li>
+		</ul>
+<!--			</label>
+		</div> -->
+	</div>
+</template>
