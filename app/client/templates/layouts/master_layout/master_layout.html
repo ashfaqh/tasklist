@@ -1,19 +1,27 @@
 <template name="MasterLayout">
-	<div class="container">
+<!--	<nav class="navbar navbar-default"> -->
+		<div class="container">	
 		<div class="row">
-			<div class="login">
-				{{#if currentUser}}
-					{{currentUser.profile.name}} - <a class="btn btn-link" data-logout>Logout</a>
-				{{else}}
-					{{#if loggingIn}}
-						Logging In...
+			<ul class="list-inline breadcrumb">
+				{{>yield "breadcrumbs"}}
+			
+				<li class="login pull-right">
+					{{#if currentUser}}
+						{{currentUser.profile.name}} - <a class="btn btn-link" data-logout>Logout</a>
 					{{else}}
-						<a class="btn btn-link" data-login>Login with Meteor</a>
+						{{#if loggingIn}}
+							Logging In...
+						{{else}}
+							<a class="btn btn-link" data-login>Login with Meteor</a>
+						{{/if}}
 					{{/if}}
-				{{/if}}
-			</div>
+				</li>				
+			</ul>
 		</div>
+		</div>
+<!--	</nav> -->
 
+	<div class="container main">
 		<div class="row">
 			{{> yield}}
 		</div>

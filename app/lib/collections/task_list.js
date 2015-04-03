@@ -1,7 +1,7 @@
 TaskList = new Mongo.Collection('TaskList');
 
 
-if (Meteor.isServer) {
+/* if (Meteor.isServer) {
   TaskList.allow({
     insert: function (userId, doc) {
       return userId === doc.createdBy;
@@ -15,8 +15,12 @@ if (Meteor.isServer) {
       return userId == doc.createdBy;
     }
   });
+}
 
-/*  Tasklist.deny({
+
+if (Meteor.isClient) {
+
+  TaskList.deny({
     insert: function (userId, doc) {
       return true;
     },
@@ -28,5 +32,5 @@ if (Meteor.isServer) {
     remove: function (userId, doc) {
       return true;
     }
-  }); */
-}
+  });
+} */

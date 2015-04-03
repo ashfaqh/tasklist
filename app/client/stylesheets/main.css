@@ -37,12 +37,12 @@
 	text-decoration: line-through;
 }
 
-.date-actions {
-	color: grey;
-	visibility: hidden;
+.actions {
+	color: rgb(200,200,200);
+/*	visibility: hidden; */
 }
 
-.task-item:hover .date-actions {
+.task-item:hover .actions {
 	visibility: visible;
 }
 
@@ -51,6 +51,20 @@
 	cursor: hand;
 }
 
+.edit-button {
+	cursor: pointer;
+	cursor: hand;
+	color: rgb(200, 200, 200);
+}
+
 .delete-button:hover {
 	color: black;
+}
+
+.edit-button:hover {
+	color: black;
+}
+
+.actions-line {
+	padding-left: 20px;
 }

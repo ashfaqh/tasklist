@@ -5,15 +5,11 @@ Template.Task.events({
 	'click [name=isDone]': function(event, tmpl) {
 		var id = this._id;
 		var isDone = tmpl.find('input').checked;
-		TaskList.update({_id: id}, {
-			$set: {
-				isDone: isDone
-			}
-		});
+		Meteor.call('/app/task/updateIsDone', id, isDone);
 	},
 	'click [name=delete]': function(event, tmpl) {
 		var id = this._id;
-		TaskList.remove({_id: id});
+		Meteor.call('/app/task/remove', id);
 	}
 });
 
@@ -22,10 +18,13 @@ Template.Task.events({
 /*****************************************************************************/
 Template.Task.helpers({
 	isDone: function () {
-		return this.isDone? 'checked':'';
+		return this.isDone? 'checked' : '';
 	},
 	formatDate: function(createdOn) {
 		return moment(createdOn).format('LLL');
+	},
+	isDoneChecked: function() {
+		return this.isDone? true : false;
 	}
 });
 

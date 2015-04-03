@@ -10,3 +10,18 @@ Router.route('/', {
   action: 'action',
   where: 'client'
 });
+
+
+Router.route('taskdetail/:_id', {
+  name: 'Taskdetail',
+  controller: 'TaskdetailController',
+  action: 'action',
+  where: 'client'
+});
+
+Router.route('taskdetail/:_id/edit', {
+  name: 'EditTask',
+  controller: 'TaskdetailController',
+  action: 'edit',
+  where: 'client'
+});

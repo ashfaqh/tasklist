@@ -5,13 +5,7 @@ Template.CreateTask.events({
 	'submit form': function(event, tmpl) {
 		event.preventDefault();
 		var task = tmpl.find('input').value;
-		TaskList.insert({
-			task: task,
-			isDone: false,
-			createdOn: new Date,
-			createdBy: Meteor.userId()
-		});
-
+		Meteor.call('/app/task/insert', task);
 		tmpl.find('form').reset();
 	}
 });

@@ -1,3 +1,10 @@
 <template name="Home">
+	{{#contentFor "breadcrumbs"}}
+		<li>
+			{{#linkTo route='home' class="btn btn-link"}}
+				Home
+			{{/linkTo}}
+		</li>
+	{{/contentFor}}
 	{{> TaskList}}
 </template>

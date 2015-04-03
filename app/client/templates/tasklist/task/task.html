@@ -5,13 +5,24 @@
 		<ul class="list-inline">
 			<li class="task-item checkbox">
 				<label>
-					<input type="checkbox" name="isDone" {{isDone}}>
+					<input type="checkbox" name="isDone" checked="{{isDoneChecked}}">
 <!--			<li class="task-item"> -->
-					<span class="{{isDone}}">{{task}}</span>
-				</label>
+					<span class="{{isDone}}">
+						{{#linkTo route='Taskdetail'}}
+							{{task}}
+						{{/linkTo}}
+					</span>
+				</label> 
 			</li>
-			<li class="pull-right date-actions">
-				{{formatDate createdOn}}
+		</ul>
+		<ul class="list-inline actions-line">
+			<li class="pull-left actions">
+				Created On: {{formatDate createdOn}}
+			</li>
+			<li class="pull-right actions">
+				{{#linkTo route='EditTask'}}
+					<span class="glyphicon glyphicon-edit edit-button" aria-hidden="true" name="edit"></span>
+				{{/linkTo}}
 				<span class="glyphicon glyphicon-trash delete-button" aria-hidden="true" name="delete"></span>
 			</li>
 		</ul>
